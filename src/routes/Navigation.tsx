@@ -22,9 +22,9 @@ export const Navigation = () => {
 					</nav>
 
 					<Routes>
-						{routes.map(({ to, path, Component }) => (
-							<Route key={`${to} + ${Math.random()}`} path={path} element={<Component />} />
-						))}
+						{routes.map(({ to, path, Component }) => {
+							return <Route key={`${to} + ${Math.random()}`} path={path} element={<Component />} />;
+						})}
 
 						<Route path="/*" element={<Navigate to={routes[0].to} replace />} />
 					</Routes>
