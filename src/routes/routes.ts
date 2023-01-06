@@ -1,36 +1,32 @@
 import { lazy, LazyExoticComponent } from "react";
-// import { LazyPage1, LazyPage2, LazyPage3 } from "../01-lazyload/pages";
-
-const Lazy1 = lazy(() => import(/* webpackChunkName: "Lazy1" */"../01-lazyload/pages/LazyPage1"));
-const Lazy2 = lazy(() => import(/* webpackChunkName: "Lazy2" */"../01-lazyload/pages/LazyPage2"));
-const Lazy3 = lazy(() => import(/* webpackChunkName: "Lazy3" */"../01-lazyload/pages/LazyPage3"));
+import ShoppingPage from "../02-component-patterns/pages/ShoppingPage";
 
 type JsxComponent = () => JSX.Element;
 
 interface Route {
 	to: string;
 	path: string;
-	Component: LazyExoticComponent<JsxComponent> | JsxComponent;
+	Component?: LazyExoticComponent<JsxComponent> | JsxComponent;
 	name: string;
 }
 
 export const routes: Route[] = [
 	{
-		to: "/lazyPage1",
-		path: "lazyPage1",
-		Component: Lazy1,
-		name: "Lazy-1",
+		to: "/shoppingPage",
+		path: "shoppingPage",
+		Component: ShoppingPage,
+		name: "ShoppingPage",
 	},
 	{
-		to: "/lazy2",
-		path: "lazy2",
-		Component: Lazy2,
-		name: "Lazy-2",
+		to: "/about",
+		path: "about",
+		// Component: <h1>,
+		name: "About",
 	},
 	{
-		to: "/lazy3",
-		path: "lazy3",
-		Component: Lazy3,
-		name: "Lazy-3",
+		to: "/users",
+		path: "users",
+		// Component: <h1>,
+		name: "Users",
 	},
 ];
