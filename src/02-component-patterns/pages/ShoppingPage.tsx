@@ -2,6 +2,7 @@ import { ProductCard } from "../components";
 import { ProductImage } from "../components/ProductImage";
 import { ProductTitle } from "../components/ProductTitle";
 import { ProductButtons } from "../components/ProductButtons";
+import "../styles/custom-styles.css";
 
 function ShoppingPage() {
 	return (
@@ -14,11 +15,16 @@ function ShoppingPage() {
 					flexWrap: "wrap",
 				}}
 			>
-				<ProductCard product={{ id: "1", title: "Tomy app" }}>
+				<ProductCard product={{ id: "1", title: "Tomy app" }} className="bg-dark">
 					<ProductImage />
-					<ProductTitle />
+					<ProductTitle className="text-white text-bold" />
+					<ProductButtons className="custom-btn custom-countLabel" />
+				</ProductCard>
+
+				<ProductCard product={{ id: "2", title: "Tomy app" }}>
+					<ProductImage />
+					<ProductTitle title="Tomy" />
 					<ProductButtons />
-					{/* <ProductButtons increaseBy={increaseBy} counter={counter} /> */}
 				</ProductCard>
 			</div>
 		</div>

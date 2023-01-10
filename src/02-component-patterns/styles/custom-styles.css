@@ -1,0 +1,25 @@
+.bg-dark {
+	background: rgb(55, 55, 55);
+}
+
+.custom-img {
+	border-radius: 20px;
+	padding: 10px;
+	width: calc(100% - 20px);
+}
+
+.custom-btn button {
+	background: white;
+}
+
+.custom-countLabel > div {
+	background: white;
+}
+
+.text-white {
+	color: white;
+}
+
+.text-bold {
+	font-weight: bold;
+}

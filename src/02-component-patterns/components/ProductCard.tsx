@@ -1,9 +1,22 @@
 import styles from "../styles/styles.module.css";
+import "../styles/custom-styles.css";
 
-import { ProductProps } from "../interfaces";
+import { ReactElement } from "react";
+import { Product } from "../interfaces/Product";
+import { ProductProvider } from "../context/ProductContext";
 
-function ProductCard({ children }: ProductProps) {
-	return <div className={styles.productCard}>{children}</div>;
+export interface Props {
+	product: Product;
+	children?: ReactElement | ReactElement[];
+	className?: string;
+}
+
+function ProductCard({ children, className }: Props) {
+	return (
+		<ProductProvider>
+			<div className={`${styles.productCard} ${className}`}>{children}</div>
+		</ProductProvider>
+	);
 }
 
 export default ProductCard;
