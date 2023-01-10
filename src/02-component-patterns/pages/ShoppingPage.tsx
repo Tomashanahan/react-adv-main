@@ -23,7 +23,7 @@ function ShoppingPage() {
 
 				<ProductCard product={{ id: "2", title: "Tomy app" }}>
 					<ProductImage />
-					<ProductTitle title="Tomy" />
+					<ProductTitle />
 					<ProductButtons />
 				</ProductCard>
 			</div>

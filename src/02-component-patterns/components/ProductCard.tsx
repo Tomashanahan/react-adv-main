@@ -9,12 +9,15 @@ export interface Props {
 	product: Product;
 	children?: ReactElement | ReactElement[];
 	className?: string;
+	style?: React.CSSProperties;
 }
 
-function ProductCard({ children, className }: Props) {
+function ProductCard({ children, className, style }: Props) {
 	return (
 		<ProductProvider>
-			<div className={`${styles.productCard} ${className}`}>{children}</div>
+			<div style={style} className={`${styles.productCard} ${className}`}>
+				{children}
+			</div>
 		</ProductProvider>
 	);
 }

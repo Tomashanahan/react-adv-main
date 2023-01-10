@@ -6,9 +6,10 @@ import ProductContext from "../context/ProductContext";
 interface Props {
 	img?: string;
 	className?: string;
+	style?: React.CSSProperties;
 }
 
-export function ProductImage({ img, className }: Props) {
+export function ProductImage({ img, className, style }: Props) {
 	const { product } = useContext(ProductContext);
 	let imgToShow: string;
 
@@ -16,5 +17,5 @@ export function ProductImage({ img, className }: Props) {
 	else if (product.img) imgToShow = product.img;
 	else imgToShow = noImage;
 
-	return <img className={`${styles.productImg} ${className}`} src={imgToShow} alt="Coffee" />;
+	return <img style={style} className={`${styles.productImg} ${className}`} src={imgToShow} alt="Coffee" />;
 }
